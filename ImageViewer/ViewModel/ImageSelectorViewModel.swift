@@ -17,18 +17,20 @@ class ImageSelectorViewModel: ObservableObject {
     @MainActor func getImages() async throws {
         if let imagesStored = localStorage.load([ImageModel].self, from: .imageList) {
             imageList = imagesStored
+            isLoading = false
         } else {
             try await fetchImages()
         }
-        isLoading = false
     }
     
     /// Get images from API
-    @MainActor private func fetchImages() async throws {
+    @MainActor func fetchImages() async throws {
+        self.isLoading = true
         guard let images = try await imagesClient.getImages(),
               localStorage.save(in: .imageList, object: images) else {
             return
         }
+        self.isLoading = false
         imageList = images
     }
     

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D247CA382ADC46A700C01113 /* ImageSelectorItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D247CA372ADC46A700C01113 /* ImageSelectorItemView.swift */; };
 		D24DCCA02ADCD282004FCBC6 /* ImageSelectorItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24DCC9F2ADCD282004FCBC6 /* ImageSelectorItemViewModel.swift */; };
-		D24DCCA22ADCE6B7004FCBC6 /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24DCCA12ADCE6B7004FCBC6 /* ConfirmView.swift */; };
 		D25079292ADB7B7F00AC0D86 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25079282ADB7B7F00AC0D86 /* LoaderView.swift */; };
 		D2BDE2CA2AD8A01900F3811B /* ImageViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDE2C92AD8A01900F3811B /* ImageViewerApp.swift */; };
 		D2BDE2CC2AD8A01900F3811B /* ImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDE2CB2AD8A01900F3811B /* ImageSelectorView.swift */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		D247CA372ADC46A700C01113 /* ImageSelectorItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorItemView.swift; sourceTree = "<group>"; };
 		D24DCC9F2ADCD282004FCBC6 /* ImageSelectorItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorItemViewModel.swift; sourceTree = "<group>"; };
-		D24DCCA12ADCE6B7004FCBC6 /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 		D25079282ADB7B7F00AC0D86 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		D2BDE2C62AD8A01900F3811B /* ImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BDE2C92AD8A01900F3811B /* ImageViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerApp.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				D2BDE2CB2AD8A01900F3811B /* ImageSelectorView.swift */,
 				D247CA372ADC46A700C01113 /* ImageSelectorItemView.swift */,
 				D2BDE30C2AD997B000F3811B /* ImageDetailView.swift */,
-				D24DCCA12ADCE6B7004FCBC6 /* ConfirmView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,7 +355,6 @@
 				D2BDE3112AD9BCA100F3811B /* ImageDetailViewModel.swift in Sources */,
 				D25079292ADB7B7F00AC0D86 /* LoaderView.swift in Sources */,
 				D2BDE30B2AD989C200F3811B /* SplashView.swift in Sources */,
-				D24DCCA22ADCE6B7004FCBC6 /* ConfirmView.swift in Sources */,
 				D247CA382ADC46A700C01113 /* ImageSelectorItemView.swift in Sources */,
 				D2BDE3092AD97C1F00F3811B /* LocalStorage.swift in Sources */,
 				D2BDE2FA2AD8A26100F3811B /* APIManager.swift in Sources */,

@@ -34,6 +34,17 @@ struct ImageSelectorView: View {
                 }
                 .navigationTitle("Photo list")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Button {
+                            Task {
+                                try await imageSelectorViewModel.fetchImages()
+                            }
+                        } label: {
+                            Image(systemName: "arrow.clockwise.circle")
+                        }
+                    }
+                }
             }
         }
        

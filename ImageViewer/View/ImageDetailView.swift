@@ -65,7 +65,7 @@ struct ImageDetailView: View {
         ImageModel(
             albumId: 1,
             id: 1,
-            title: "Perrito",
+            title: "ImageTest",
             url: "https://via.placeholder.com/600/92c952",
             thumbnailUrl: "https://via.placeholder.com/150/92c952"))
     )

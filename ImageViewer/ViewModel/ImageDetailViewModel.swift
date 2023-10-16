@@ -57,7 +57,6 @@ class ImageDetailViewModel: ObservableObject {
         localStorage.delete(from: .photoDetail)
         localStorage.delete(from: .thumbnail)
         return localStorage.save(in: .imageList, object: imagesStored)
-        
     }
     
 }
