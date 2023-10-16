@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct ImageViewerApp: App {
+    @State private var isActive = false
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            if isActive {
+                ImageSelectorView()
+            } else {
+                SplashView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                            self.isActive = true
+                        }
+                    }
+            }
         }
     }
 }
