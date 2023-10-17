@@ -15,9 +15,3 @@ struct ImageModel: Codable {
     let url: String
     let thumbnailUrl: String
 }
-
-struct ImageDataModel: Codable {
-    let image: ImageModel
-    let thumbnail: Data
-    let fullImage: Data
-}

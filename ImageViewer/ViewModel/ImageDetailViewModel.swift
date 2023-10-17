@@ -46,6 +46,7 @@ class ImageDetailViewModel: ObservableObject {
         if try await imagesClient.deleteImage(id: imageModel.id) {
             return deleteImageStored()
         }
+        self.saveToDelete(id: imageModel.id)
         return nil
     }
     
@@ -59,6 +60,16 @@ class ImageDetailViewModel: ObservableObject {
         localStorage.delete(from: .thumbnail)
         localStorage.save(in: .imageList, object: imagesStored)
         return imagesStored
+    }
+    
+    private func saveToDelete(id: Int) {
+        if var idListToDelete = localStorage.load(Set<Int>.self, from: .listToDelete) {
+            idListToDelete.insert(id)
+            localStorage.save(in: .listToDelete, object: idListToDelete)
+        } else {
+            let setId: Set = [id]
+            localStorage.save(in: .listToDelete, object: setId)
+        }
     }
     
 }
