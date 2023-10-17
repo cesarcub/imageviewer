@@ -42,22 +42,23 @@ class ImageDetailViewModel: ObservableObject {
     
     /// Deletes photo API and local
     @discardableResult
-    @MainActor func deletePhotoAPI() async throws -> Bool {
+    @MainActor func deletePhotoAPI() async throws -> [ImageModel]? {
         if try await imagesClient.deleteImage(id: imageModel.id) {
             return deleteImageStored()
         }
-        return false
+        return nil
     }
     
     /// Deletes photo in local
-    private func deleteImageStored() -> Bool {
+    private func deleteImageStored() -> [ImageModel]? {
         guard var imagesStored = localStorage.load([ImageModel].self, from: .imageList) else {
-            return true
+            return nil
         }
         imagesStored.removeAll(where: {$0.id == imageModel.id})
         localStorage.delete(from: .photoDetail)
         localStorage.delete(from: .thumbnail)
-        return localStorage.save(in: .imageList, object: imagesStored)
+        localStorage.save(in: .imageList, object: imagesStored)
+        return imagesStored
     }
     
 }

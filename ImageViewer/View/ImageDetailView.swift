@@ -11,6 +11,7 @@ struct ImageDetailView: View {
     @StateObject var imageDetail: ImageDetailViewModel
     @State private var isConfirmShow = false
     @Environment(\.dismiss) var isShowingDetailView
+    @EnvironmentObject var imageListViewModel: ImageSelectorViewModel
     
     var body: some View {
         ZStack {
@@ -50,7 +51,10 @@ struct ImageDetailView: View {
                     ) {
                         Button("Si", role: .destructive) {
                             Task {
-                                try await imageDetail.deletePhotoAPI()
+                                guard let newList = try await imageDetail.deletePhotoAPI() else {
+                                    return
+                                }
+                                imageListViewModel.imageList = newList
                                 self.isShowingDetailView()
                             }
                         }

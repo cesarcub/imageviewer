@@ -45,7 +45,7 @@ struct ImageSelectorView: View {
                         }
                     }
                 }
-            }
+            }.environmentObject(imageSelectorViewModel)
         }
        
     }
