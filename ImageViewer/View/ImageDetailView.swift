@@ -10,6 +10,8 @@ import SwiftUI
 struct ImageDetailView: View {
     @StateObject var imageDetail: ImageDetailViewModel
     @State private var isConfirmShow = false
+    @Environment(\.dismiss) var isShowingDetailView
+    
     var body: some View {
         ZStack {
             VStack {
@@ -49,6 +51,7 @@ struct ImageDetailView: View {
                         Button("Si", role: .destructive) {
                             Task {
                                 try await imageDetail.deletePhotoAPI()
+                                self.isShowingDetailView()
                             }
                         }
                         Button("No", role: .cancel ) {}

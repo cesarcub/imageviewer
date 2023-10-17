@@ -41,6 +41,7 @@ class ImageDetailViewModel: ObservableObject {
     }
     
     /// Deletes photo API and local
+    @discardableResult
     @MainActor func deletePhotoAPI() async throws -> Bool {
         if try await imagesClient.deleteImage(id: imageModel.id) {
             return deleteImageStored()
